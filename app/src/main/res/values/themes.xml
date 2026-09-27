@@ -22,6 +22,12 @@
         <item name="backgroundTint">@color/button_purple</item>
         <item name="shapeAppearanceOverlay">@style/LabButtonShape</item>
     </style>
+    <style name="TabletText" parent="LabText">
+        <item name="android:textSize">@dimen/tablet_text_size</item>
+    </style>
+    <style name="TabletButton" parent="LabButton">
+        <item name="android:textSize">@dimen/tablet_button_text_size</item>
+    </style>
     <style name="LabButtonShape">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">50%</item>

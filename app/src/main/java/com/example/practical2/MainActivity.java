@@ -1,6 +1,7 @@
 package com.example.practical2;
 
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,10 +21,16 @@ public class MainActivity extends AppCompatActivity {
                 .setAppearanceLightStatusBars(true);
         WindowCompat.getInsetsController(getWindow(), getWindow().getDecorView())
                 .setAppearanceLightNavigationBars(true);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+        View main = findViewById(R.id.main);
+        int initialLeft = main.getPaddingLeft();
+        int initialTop = main.getPaddingTop();
+        int initialRight = main.getPaddingRight();
+        int initialBottom = main.getPaddingBottom();
+        ViewCompat.setOnApplyWindowInsetsListener(main, (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars()
                     | WindowInsetsCompat.Type.displayCutout());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            v.setPadding(initialLeft + systemBars.left, initialTop + systemBars.top,
+                    initialRight + systemBars.right, initialBottom + systemBars.bottom);
             return insets;
         });
     }
