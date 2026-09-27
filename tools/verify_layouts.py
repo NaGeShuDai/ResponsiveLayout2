@@ -1,4 +1,3 @@
-"""Verify the lab's resource contract without Android Studio or third-party modules."""
 from pathlib import Path
 import xml.etree.ElementTree as ET
 

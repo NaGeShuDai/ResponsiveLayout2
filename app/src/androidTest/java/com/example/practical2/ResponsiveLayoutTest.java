@@ -68,7 +68,6 @@ public class ResponsiveLayoutTest {
 
     @Test public void runningActivityShowsAllContentWithinWindow() {
         try (ActivityScenario<MainActivity> scenario = ActivityScenario.launch(MainActivity.class)) {
-            // Espresso waits until layout and the main thread are idle.
             androidx.test.espresso.Espresso.onView(
                     androidx.test.espresso.matcher.ViewMatchers.withId(R.id.main)).check(
                     androidx.test.espresso.assertion.ViewAssertions.matches(
