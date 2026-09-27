@@ -1,0 +1,10 @@
+<resources>
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="word_red">#FF0000</color>
+    <color name="word_blue">#0000FF</color>
+    <color name="word_purple">#673AB7</color>
+    <color name="word_yellow">#FFFF00</color>
+    <color name="button_purple">#6750A4</color>
+    <color name="surface">#FFF7FF</color>
+</resources>

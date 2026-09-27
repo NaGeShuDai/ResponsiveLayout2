@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Lab 2 · Linear</string>
+    <string name="lab_title">Lab 2</string>
+    <string name="layout_title">Responsive Layout 2</string>
+    <string name="word_this">This</string>
+    <string name="word_is">is</string>
+    <string name="word_my">my</string>
+    <string name="word_first">first</string>
+    <string name="application_title">Android Application</string>
+    <string name="change">Change</string>
+    <string name="cancel">Cancel</string>
+</resources>
