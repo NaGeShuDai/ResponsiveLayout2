@@ -75,6 +75,21 @@ public class ResponsiveLayoutTest {
             scenario.onActivity(activity -> {
                 View root = activity.findViewById(R.id.main);
                 Configuration config = activity.getResources().getConfiguration();
+                String expectedOrientation = InstrumentationRegistry.getArguments()
+                        .getString("expectedOrientation");
+                if (expectedOrientation != null) {
+                    assertEquals("Device must actually rotate",
+                            "landscape".equals(expectedOrientation)
+                                    ? Configuration.ORIENTATION_LANDSCAPE
+                                    : Configuration.ORIENTATION_PORTRAIT,
+                            config.orientation);
+                }
+                String expectedDevice = InstrumentationRegistry.getArguments()
+                        .getString("expectedDevice");
+                if (expectedDevice != null) {
+                    assertEquals("Device must use the requested screen class",
+                            "tablet".equals(expectedDevice), config.smallestScreenWidthDp >= 600);
+                }
                 String expected = config.smallestScreenWidthDp >= 600 ? "tablet_sw600dp"
                         : config.orientation == Configuration.ORIENTATION_LANDSCAPE
                         ? "phone_landscape" : "phone_portrait";
