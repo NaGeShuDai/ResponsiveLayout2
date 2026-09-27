@@ -11,7 +11,7 @@ for rotation in 0 1; do
   adb shell am start -W -n com.example.practical2/.MainActivity
   sleep 3
   result="validation/$device/$orientation-tests.txt"
-  adb shell am instrument -w -r +    -e class com.example.practical2.ResponsiveLayoutTest +    com.example.practical2.test/androidx.test.runner.AndroidJUnitRunner | tee "$result"
+  adb shell am instrument -w -r -e class com.example.practical2.ResponsiveLayoutTest com.example.practical2.test/androidx.test.runner.AndroidJUnitRunner | tee "$result"
   grep -q 'OK (6 tests)' "$result"
   adb shell am start -W -n com.example.practical2/.MainActivity
   sleep 2
